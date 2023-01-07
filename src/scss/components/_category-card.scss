@@ -1,0 +1,445 @@
+.category-card {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 82px;
+  background-color: var(--dirty-light-color);
+  border-radius: 10px;
+
+  @include high-mobile {
+    padding-top: var(--category-card-padding-top);
+  }
+
+  &__list {
+    @include flex-all-sb;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 30px 13px 30px;
+
+    @include high-mobile {
+      padding-left: var(--category-card-padding);
+      padding-right: var(--category-card-padding);
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      padding-bottom: 3px;
+    }
+  }
+
+  &__list-sofa {
+    max-width: 314px;
+
+    @include high-mobile {
+      padding: 0 30px;
+      margin-bottom: 13px;
+    }
+
+    @include mobile {
+      margin-right: 2px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list-armchair {
+    max-width: 249px;
+  }
+
+  &__list-bed {
+    max-width: 286px;
+  }
+
+  &__list-dresser {
+    max-width: 186px;
+
+    @include mobile {
+      &:first-child {
+        margin-right: 100px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &__list-chair {
+    max-width: 294px;
+  }
+
+  &__item {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--grey-color);
+
+    &:not(:last-child) {
+      margin-right: 9px;
+    }
+
+    @include tablet {
+      font-size: var(--category-card-item-font);
+    }
+
+    @include tablet-landscape-up {
+      font-size: 14px;
+    }
+
+    @include high-mobile {
+      font-size: var(--category-card-item-mobile-font);
+    }
+  }
+
+  &__item-sofa {
+    @include high-mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: -2px;
+      bottom: -3px;
+      left: -3px;
+      right: -3px;
+      z-index: -1;
+      background-color: #ebd1ff;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-property: transform;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+    }
+
+    &:focus-visible {
+      outline: none;
+      color: var(--primary_shade-color);
+    }
+
+    &:focus-visible:not(:hover)::before{
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+
+    &:hover:not(:focus-visible) {
+      color: var(--primary-color);
+    }
+
+    &:active:not(:focus-visible) {
+      color: var(--primary_shade-color);
+    }
+  }
+
+  &__title-block {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    @include flex-v-center;
+
+    @include mobile {
+      margin-bottom: 10px;
+      padding: 0 var(--category-card-padding);
+    }
+  }
+
+  &__title-block-sofa {
+    @include mobile {
+      padding: 0 30px;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0;
+    margin-right: 6px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    color: var(--black-color);
+
+    @include tablet {
+      font-size: var(--category-card-title-font);
+    }
+
+    @include tablet-landscape-up {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: var(--category-card-title-mobile-font);
+      line-height: 18px;
+    }
+  }
+
+  &__title-sofa {
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__title-link {
+    display: none;
+
+    @include mobile {
+      display: inline-block;
+      padding-top: 2px;
+    }
+  }
+
+  &__title-dresser {
+    @include mobile {
+      max-width: var(--category-card-dresser-title);
+      margin-right: 0;
+    }
+  }
+
+  &__title-link-dresser {
+    @include mobile {
+      align-self: flex-end;
+      margin-bottom: -5px;
+    }
+  }
+
+  &__title-link-sofa {
+    @include mobile {
+      display: inline-block;
+      padding-top: 5px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include mobile {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__sofa-img {
+    max-width: 518px;
+
+    @include tablet {
+      max-width: 516px;
+    }
+
+    @include mobile {
+      padding-top: 3px;
+      height: 212px;
+      max-width: 296px;
+    }
+  }
+
+  &__bed-img {
+    max-width: 308px;
+
+    @include tablet {
+      padding-top: 5px;
+    }
+
+    @include mobile {
+      padding-top: 3px;
+    }
+  }
+
+  &__dresser-img {
+    max-width: 328px;
+
+    @include tablet {
+      padding-top: 5px;
+      max-width: 252px;
+    }
+
+    @include mobile {
+      padding-top: 9px;
+    }
+  }
+
+  &__armchair-img {
+    max-width: 518px;
+
+    @include tablet {
+      padding-top: 5px;
+      max-width: 260px;
+    }
+
+    @include mobile {
+      padding-top: 3px;
+    }
+  }
+
+  &__chair-img {
+    max-width: 260px;
+
+    @include tablet {
+      padding-top: 6px;
+      max-width: 265px;
+    }
+
+    @include mobile {
+      padding-top: 3px;
+    }
+  }
+
+  &__main-link {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    @include flex-v-center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: var(--primary-color);
+
+    @include mobile {
+      display: none;
+    }
+
+    &:hover:not(:focus-visible) {
+      .category-card__link-descr {
+        &::before {
+          opacity: 1;
+          transition: opacity .4s ease-in-out;
+        }
+      }
+
+      .category-card__arrow {
+        background-color: var(--primary-color);
+        transition: background-color .4s ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible {
+
+      .category-card__link-descr {
+        &::before {
+          opacity: 1;
+          transition: opacity .4s ease-in-out;
+        }
+      }
+
+      .category-card__arrow {
+        background-color: var(--primary_light-color);
+        transition: background-color .4s ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      .category-card__link-descr {
+        color: var(--primary_shade-color);
+        transition: color .4s ease-in-out;
+
+        &::before {
+          opacity: 1;
+          background-color: var(--primary_shade-color);
+          transition-property: opacity, background-color;
+          transition-duration: .4s;
+          transition-timing-function: ease-in-out;
+        }
+      }
+
+      .category-card__arrow {
+        background-color: var(--primary_shade-color);
+        border-color: var(--primary_shade-color);
+        transition-property: border-color, background-color;
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__link-descr {
+    position: relative;
+    margin-right: 5px;
+    transition: color .4s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      height: 2px;
+      width: 100%;
+      background-color: var(--primary-color);
+      opacity: 0;
+      transition-property: opacity, background-color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition-property: border-color, background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+      transition: background-color .4s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(-45deg);
+      transition: background-color .4s ease-in-out;
+    }
+  }
+}
+
+.category__sofa-card {
+  @include mobile {
+    padding-top: 30px;
+  }
+}

@@ -1,0 +1,27 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header-top";
+@import "./components/header-bot";
+@import "./components/hero";
+@import "./components/special-offers";
+@import "./components/high-rating";
+@import "./components/product-card";
+@import "./components/oxford";
+@import "./components/top-category";
+@import "./components/category-card";
+@import "./components/useful";
+@import "./components/happy";
+@import "./components/form";
+@import "./components/footer";
+
+
+
+
+@import "./components/keyframes";
+@import "./components/select-top";
+@import "./components/select-bot";

@@ -1,0 +1,28 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "./components/keyframes";
+
+// подключения компонентов страницы
+@import "./components/header-top";
+@import "./components/header-bot";
+@import "./catalog/breadcrumbs";
+@import "./components/product-card";
+@import "./catalog/catalog-hero";
+@import "./catalog/filters";
+@import "./catalog/range-box";
+@import "./catalog/oxford";
+@import "./catalog/mobile-filters";
+
+
+// @import "./components/product-card";
+@import "./components/footer";
+
+
+
+
+
+@import "./components/select-top";
+@import "./components/select-bot";

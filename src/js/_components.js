@@ -1,0 +1,10 @@
+import './components/selects';
+import './components/swipers';
+import './components/rating-btn';
+import './components/tooltip';
+import './components/validation';
+import './catalog/catalog-cards';
+import './catalog/range-slider';
+import './catalog/chackbox-btns';
+import './catalog/open-checkbox';
+import './card/card-swipers';

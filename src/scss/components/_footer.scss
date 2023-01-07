@@ -1,0 +1,245 @@
+.footer {
+
+  &__top {
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: var(--md_grey-color);
+  }
+
+  &__top-container {
+    @include flex-all-sb;
+    flex-direction: row;
+    align-items: stretch;
+
+    @include tablet-landscape-up {
+      flex-direction: column;
+    }
+  }
+
+  &__img-side {
+    @include flex-all-sb;
+    margin-bottom: -3px;
+    margin-right: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    @include tablet {
+      min-width: 200px;
+      margin-right: 20px;
+    }
+
+    @include tablet-landscape-up {
+      flex-direction: row;
+      margin-bottom: 18px;
+      margin-right: 0;
+    }
+
+    @include mobile {
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 21px;
+    }
+  }
+
+  &__logo {
+    @include tablet {
+      width: 187px;
+      height: 27px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__massengers {
+    width: 130px;
+    @include flex-all-sb;
+    flex-direction: row;
+  }
+
+  &__massenger {
+    position: relative;
+    z-index: 1;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: -3px;
+      bottom: 0;
+      left: -3px;
+      right: -3px;
+      z-index: -1;
+      background-color: #c998fb;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform .5s ease-in-out;
+    }
+
+    &:focus-visible {
+      outline: none;
+      .footer__massenger-link {
+        fill: var(--light-color);
+      }
+    }
+
+    &:focus-visible:not(:hover)::before{
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+
+    &:hover:not(:focus-visible) {
+      .footer__massenger-link {
+        fill: #A65CF0;
+        transition: fill .4s ease-in-out;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      .footer__massenger-link {
+        fill: #7033AC;
+        transition: fill .4s ease-in-out;
+      }
+    }
+  }
+
+  &__massenger-link {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    fill: var(--grey-color);
+    transition: fill .4s ease-in-out;
+  }
+
+  &__right-side {
+    width: 843px;
+    padding-top: 4px;
+    @include flex-all-sb;
+    flex-direction: row;
+    align-items: stretch;
+
+    @include tablet-landscape-up {
+      width: 100%;
+      margin-right: -4px;
+    }
+
+    @include high-mobile {
+      display: grid;
+      column-gap: 17px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__card {
+    @include flex;
+    flex-direction: column;
+
+    @include high-mobile {
+      grid-column: span 3;
+    }
+
+    &:nth-child(2) {
+      margin-right: 20px;
+
+      @include high-mobile {
+        margin-bottom: 28px;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: 32px;
+
+      @include tablet {
+        margin-right: 34px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--black-color);
+  }
+
+  &__card-list {
+    @include flex;
+    flex-direction: column;
+  }
+
+  &__card-item {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--grey-color);
+    transition: color .4s ease-in-out;
+
+    @include mobile {
+      margin-right: -15px;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: -2px;
+      bottom: -3px;
+      left: -3px;
+      right: -3px;
+      z-index: -1;
+      background-color: #ebd1ff;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform .5s ease-in-out;
+    }
+
+    &:focus-visible {
+      outline: none;
+      color: var(--primary_shade-color);
+    }
+
+    &:focus-visible:not(:hover)::before{
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+
+    &:hover:not(:focus-visible) {
+      color: var(--primary-color);
+    }
+
+    &:active:not(:focus-visible) {
+      color: var(--primary_shade-color);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__bot {
+    min-height: 30px;
+    background-color: var(--dirty-light-color);
+  }
+
+  &__bottom-container {
+    @include flex-all-center;
+  }
+
+  &__bottom-span {
+    margin-right: 7px;
+  }
+
+  &__bottom-descr {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: var(--grey-color);
+  }
+}

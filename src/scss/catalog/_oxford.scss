@@ -1,0 +1,239 @@
+.oxford-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 132px;
+  background-color: var(--black-color);
+  border-radius: 10px;
+
+  &__content {
+    padding: 28px 70px 52px 30px;
+    position: relative;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'PlayfairDisplay';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: #D5B986;
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #999;
+  }
+
+  &__link-descr {
+    position: relative;
+    margin-right: 5px;
+    transition: color .4s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      height: 2px;
+      width: 100%;
+      background-color: var(--primary-color);
+      opacity: 0;
+      transition-property: opacity, background-color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition-property: border-color, background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+      transition: background-color .4s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(-45deg);
+      transition: background-color .4s ease-in-out;
+    }
+  }
+
+  &__main-link {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    @include flex-v-center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: var(--primary-color);
+
+    &:hover:not(:focus-visible) {
+      .oxford-card__link-descr {
+        &::before {
+          opacity: 1;
+          transition: opacity .4s ease-in-out;
+        }
+      }
+
+      .oxford-card__arrow {
+        background-color: var(--primary-color);
+        transition: background-color .4s ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible:not(:hover) {
+
+      .oxford-card__link-descr {
+        &::before {
+          opacity: 1;
+          transition: opacity .4s ease-in-out;
+        }
+      }
+
+      .oxford-card__arrow {
+        background-color: var(--primary_light-color);
+        transition: background-color .4s ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      .oxford-card__link-descr {
+        color: var(--primary_shade-color);
+        transition: color .4s ease-in-out;
+
+        &::before {
+          opacity: 1;
+          background-color: var(--primary_shade-color);
+          transition-property: opacity, background-color;
+          transition-duration: .4s;
+          transition-timing-function: ease-in-out;
+        }
+      }
+
+      .oxford-card__arrow {
+        border-color: var(--primary_shade-color);
+        background-color: var(--primary_shade-color);
+        transition-property: border-color, background-color;
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+
+        &::before {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+
+        &::after {
+          background-color: var(--light-color);
+          transition: background-color .4s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__link-descr {
+    position: relative;
+    margin-right: 5px;
+    transition: color .4s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      height: 2px;
+      width: 100%;
+      background-color: var(--primary-color);
+      opacity: 0;
+      transition-property: opacity, background-color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition-property: border-color, background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+      transition: background-color .4s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--primary-color);
+      transform: rotate(-45deg);
+      transition: background-color .4s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,501 @@
+.slider-modal {
+  width: var(--modal-slider-width);
+  height: 684px;
+  padding: 0;
+  overflow: hidden;
+
+  @include big-desktop {
+    height: 588px;
+  }
+
+  @include tablet {
+    width: var(--modal-slider-tablet-width);
+  }
+
+  @include tablet-landscape-up {
+    height: 494px;
+  }
+
+  @include small-tablet {
+    width: var(--modal-slider-smalltablet-width);
+    height: 286px;
+  }
+
+  &__slider-block {
+    padding: 50px 107px;
+
+    @include big-desktop {
+      padding: 50px 65px;
+    }
+
+    @include tablet-landscape-up {
+      padding: 50px 20px;
+    }
+
+    @include small-tablet {
+      padding: 32px 16px;
+    }
+  }
+
+  &__subslider-block {
+    position: relative;
+    background-color: #F7F7F7;
+
+    @include big-desktop {
+      padding: 0 66px;
+    }
+
+    @include small-tablet {
+      padding: 0 62px;
+    }
+  }
+
+  &__swaiper {
+    max-height: 418px;
+
+    @include big-desktop {
+      max-height: 322px;
+    }
+
+    @include tablet-landscape-up {
+      max-height: 228px;
+    }
+
+    @include small-tablet {
+      max-height: 104px;
+    }
+  }
+
+  &__slide {
+    max-height: 418px;
+
+    @include big-desktop {
+      max-height: 322px;
+    }
+
+    @include tablet-landscape-up {
+      max-height: 228px;
+    }
+
+    @include small-tablet {
+      max-height: 104px;
+    }
+  }
+
+  &__image {
+    max-height: 410px;
+    object-fit: contain;
+
+    @include big-desktop {
+      max-height: 312px;
+    }
+
+    @include tablet-landscape-up {
+      max-height: 228px;
+    }
+
+    @include small-tablet {
+      max-height: 104px;
+    }
+  }
+
+  &__subswaiper {
+    height: 172px;
+    padding-top: 20px;
+    padding-bottom: 6px;
+    background-color: #F7F7F7;
+
+    @include small-tablet {
+      height: 118px;
+    }
+  }
+
+  &__btn {
+    height: 100%;
+  }
+
+  &__subimage {
+    height: 126px;
+    object-fit: contain;
+
+    @include small-tablet {
+      height: 86px;
+    }
+
+    @include mobile {
+      height: 60px;
+    }
+  }
+
+  .modal-slide1 {
+    width: 0;
+    visibility: hidden;
+
+    @include mobile {
+      visibility: visible;
+    }
+  }
+
+  .modal-slide2 {
+    width: 253px;
+    margin-left: -14px;
+
+    @include big-desktop {
+      margin-left: -67px;
+    }
+
+    @include mobile {
+      margin-left: 0;
+    }
+  }
+
+  .modal-slide3 {
+    width: 135px;
+  }
+
+  .modal-slide4 {
+    width: 275px;
+  }
+
+  .modal-slide5 {
+    width: 281px;
+  }
+
+  .modal-slide6 {
+    width: 281px;
+  }
+
+  &__swiper-nawigation {
+    width: 77px;
+    @include flex-all-sb;
+
+    @include high-mobile {
+      position: absolute;
+      bottom: -48px;
+      left: var(--pagination-offers-left);
+    }
+  }
+
+  &__navigation {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+  }
+
+  &__left-navigation {
+    transition-property: background-color, box-shadow;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      height: 2px;
+      width: 10px;
+      background-color: var(--primary-color);
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      right: 10px;
+      height: 2px;
+      width: 10px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+    }
+
+    &:not([disabled]):hover:not(:focus-visible) {
+      background-color: var(--primary-color);
+      transition: background-color .4s ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+
+    &:not([disabled]):focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--primary-color);
+      background-color: var(--primary_light-color);
+      transition-property: background-color, box-shadow;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+
+    &:not([disabled]):active:not(:focus-visible) {
+      background-color: var(--primary_shade-color);
+      transition: background-color .4s ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+  }
+
+  &__right-navigation {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 8px;
+      height: 2px;
+      width: 10px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      right: 8px;
+      height: 2px;
+      width: 10px;
+      background-color: var(--primary-color);
+      transform: rotate(-45deg);
+    }
+
+    &:not([disabled]):hover:not(:focus-visible) {
+      background-color: var(--primary-color);
+      transition: background-color .4s ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+
+    &:not([disabled]):focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--primary-color);
+      background-color: var(--primary_light-color);
+      transition-property: background-color, box-shadow;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+
+    &:not([disabled]):active:not(:focus-visible) {
+      background-color: var(--primary_shade-color);
+      transition: background-color .4s ease-in-out;
+
+      &::before {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after {
+        background-color: var(--light-color);
+        transition: background-color .4s ease-in-out;
+      }
+    }
+  }
+
+  .swiper-button-disabled {
+    border: 2px solid var(--grey-color);
+    transition: border .4s ease-in-out;
+    cursor: auto;
+
+    &::before {
+      background-color: var(--grey-color);
+      transition: background-color .4s ease-in-out;
+    }
+
+    &::after {
+      background-color: var(--grey-color);
+      transition: background-color .4s ease-in-out;
+    }
+  }
+
+  &__left-wrapper {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    left: 16px;
+    bottom: 67px;
+
+    @include big-desktop {
+      display: inline-block;
+    }
+
+    @include small-tablet {
+      bottom: 43px;
+    }
+  }
+
+  &__right-wrapper {
+    position: absolute;
+    right: 16px;
+    bottom: 67px;
+    display: none;
+    z-index: 10;
+
+    @include big-desktop {
+      display: inline-block;
+    }
+
+    @include small-tablet {
+      bottom: 43px;
+    }
+  }
+}
+
+.buy {
+  width: 624px;
+  height: 421px;
+  padding: 30px;
+
+  @include small-tablet {
+    width: var(--modal-slider-smalltablet-width);
+    height: 387px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--black-color);
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__descr {
+    max-width: 374px;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: var(--black-color);
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  .form__input {
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.thanks {
+  width: 624px;
+  height: 421px;
+  @include flex-all-center;
+
+  @include small-tablet {
+    width: var(--modal-slider-smalltablet-width);
+    height: 216px;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    @include flex-all-center;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 172px;
+    height: 117px;
+    margin-bottom: 32px;
+    fill: #ff862f;
+
+    @include mobile {
+      margin-bottom: 14px;
+      width: 73px;
+      height: 50px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--black-color);
+    text-align: center;
+
+    @include mobile {
+      max-width: 194px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
+
+.graph-modal__close {
+  right: 20px;
+  top: 20px;
+  transition: background-image .4s ease-in-out;
+
+  &:hover:not(:focus-visible) {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29915 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z' fill='%23C998FB'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5915 19.6023C20.1362 19.0719 20.1362 18.2121 19.5915 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z' fill='%23C998FB'/%3e%3c/svg%3e");
+    transition: background-image .4s ease-in-out;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29915 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z' fill='%23A65CF0'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5915 19.6023C20.1362 19.0719 20.1362 18.2121 19.5915 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z' fill='%23A65CF0'/%3e%3c/svg%3e ");
+    transition: background-image .4s ease-in-out;
+  }
+
+  &:active:not(:focus-visible) {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29915 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z' fill='%237033AC'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5915 19.6023C20.1362 19.0719 20.1362 18.2121 19.5915 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z' fill='%237033AC'/%3e%3c/svg%3e");
+    transition: background-image .4s ease-in-out;
+  }
+}
+
+

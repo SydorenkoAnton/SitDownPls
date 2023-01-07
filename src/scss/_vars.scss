@@ -1,0 +1,65 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "OpenSans", sans-serif;
+  --content-width: 1280px;
+  --container-offset: 36px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --top-nav: calc(58px + 100 * ((100vw - 1920px) / 1920));
+  --bot-nav: calc(100px + 100 * ((100vw - 1920px) / 1920));
+  --container-tablet-paddings: calc(36px + 36 * ((100vw - 1024px) / (768 - 1024)));
+  --container-small-tablet: calc(72px - 60 * ((100vw - 768px) / (320 - 768)));
+  --bot-select-width: calc(100vw - var(--container-small-tablet)*2);
+  --slider-hero-left: calc((100vw - var(--container-width))/2);
+  --slider-offers-desc-small-cards: calc((100% - 96px - 240px)/4);
+  --slider-offers-desc-big-cards: calc(100% - 64px - 180px - (var(--slider-offers-desc-small-cards)) * 2);
+  --slider-offers: calc((100% - 64px - 180px)/3);
+  --slider-offers-mobile: calc(100% - 60px);
+  --offers-card-title-font: calc(20px + 4 * ((100vw - 900px) / (1024 - 900)));
+  --offers-card-title-font-tablet: calc(20px + 4 * ((100vw - 680px) / (768 - 680)));
+  --slider-offers-tablet: calc((100% - 32px - 120px) / 2);
+  --pagination-offers-left: calc((100% - 77px) / 2);
+  --product-img-padding: calc(20 * ((100vw - 320px) / (576 - 320)));
+  --category-card-item-font: calc(12px + 2 * ((100vw - 900px) / (1024 - 900)));
+  --category-card-title-font: calc(22px + 2 * ((100vw - 900px) / (1024 - 900)));
+  --category-card-item-mobile-font: calc(10px + 4 * ((100vw - 320px) / (680 - 320)));
+  --category-card-title-mobile-font: calc(16px + 8 * ((100vw - 320px) / (680 - 320)));
+  --category-card-padding: calc(16px + 14 * ((100vw - 320px) / (680 - 320)));
+  --category-card-padding-top: calc(13px + 17 * ((100vw - 320px) / (680 - 320)));
+  --category-card-dresser-title: calc(81px + 25 * ((100vw - 320px) / (576 - 320)));
+  --useful-card-width: calc((100% - 32px) / 2);
+  --useful-card-descr-padding: calc(15px + 15 * ((100vw - 900px) / (1024 - 900)));
+  --useful-card-descr-padding-mobile: calc(15px + 15 * ((100vw - 576px) / (768 - 576)));
+  --useful-left-card-width-tablet: calc((100% - 32px) * 0.44);
+  --useful-right-card-width-tablet: calc((100% - 32px) * 0.56);
+  --useful-left-card-width-landscape: calc((100% - 32px) * 0.68);
+  --useful-right-card-width-landscape: calc((100% - 32px) * 0.32);
+  --useful-title-card-font: calc(20px + 4 * ((100vw - 1024px) / (1280 - 1024)));
+  --product-title-card-font: calc(24px + 7 * ((100vw - 768px) / (1024 - 768)));
+  --catalog-filters-width: calc(219px + 50 * ((100vw - 1024px) / (1280 - 1024)));
+  --catalog-btn-width: calc(50% - 8px);
+  --card-block-width: calc(50% - 16px);
+  --card-card-width: calc((100% - 96px)*0.25);
+  --card-key-width: calc(100% - 216px);
+  --modal-slider-width: calc(952px + 328 * ((100vw - 1024px) / (1920 - 1024)));
+  --modal-slider-tablet-width: calc(100vw - var(--container-tablet-paddings)*2);
+  --modal-slider-smalltablet-width: calc(100vw - var(--container-small-tablet)*2);
+
+  // colors
+  --light-color: #fff;
+  --grey-light-color: #f6f6f6;
+  --grey-color: #999;
+  --grey_shade-color: #666;
+  --md_grey-color: #eaeaea;
+  --dirty-light-color: #f7f7f7;
+  --black-color: #333;
+  --primary-color: #a65cf0;
+  --secondary-color: #ff862f;
+  --secondary_light-color: #ffbd59;
+  --secondary_shade-color: #bb370e;
+  --primary_light-color: #c998fb;
+  --primary_shade-color: #7033ac;
+  --pink_violet-color: #ebd1ff;
+  --gold-color: #d5b986;
+}

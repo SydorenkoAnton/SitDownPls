@@ -1,0 +1,20 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "./components/keyframes";
+
+// подключения компонентов страницы
+@import "./components/header-top";
+@import "./components/header-bot";
+@import "./catalog/breadcrumbs";
+@import "./components/product-card";
+@import "./card/card-hero";
+@import "./card/card-modals";
+@import "./components/form";
+@import "./components/footer";
+
+
+@import "./components/select-top";
+@import "./components/select-bot";

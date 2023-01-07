@@ -1,0 +1,71 @@
+.category {
+  padding-top: 43px;
+  padding-bottom: 43px;
+
+  @include mobile {
+    padding-bottom: 58px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--black-color);
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 511px);
+    grid-auto-rows: 405px;
+    gap: 32px;
+
+    @include tablet {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(2, 511px);
+      grid-auto-rows: 511px;
+    }
+
+    @include tablet-landscape-up {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 511px);
+      grid-auto-rows: 511px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(1, 332px);
+      grid-auto-rows: 206px;
+      grid-column-gap: 16px;
+      grid-row-gap: 32px;
+    }
+  }
+
+  &__big-card {
+    grid-column: span 6;
+  }
+
+  &__card {
+    grid-column: span 4;
+
+    @include tablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__armchair {
+    @include tablet {
+      grid-row: 2;
+      grid-column-start: 4;
+      grid-column-end: 7;
+    }
+  }
+
+
+}

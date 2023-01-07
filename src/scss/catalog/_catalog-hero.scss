@@ -1,0 +1,323 @@
+.catalog-hero {
+
+  &__container {
+    @include flex;
+    flex-direction: row-reverse;
+  }
+
+  &__block {
+    width: calc(100% - 328px);
+
+    @include big-desktop {
+      width: 880px;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__filters {
+    width: 296px;
+    margin-right: 32px;
+
+    @include big-desktop {
+      max-width: 296px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__title-block {
+    @include flex;
+    flex-direction: row;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    color: var(--black-color);
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
+
+    @include tablet-landscape-up {
+      margin-bottom: 27px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn-wrapper {
+    @include flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__category-card {
+    z-index: 0;
+    height: 30px;
+    padding: 5px 3px 7px 9px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #daffd1;
+    transform: scaleY(1);
+    animation-name: select-open;
+    animation-duration: .4s;
+
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__sale-card {
+    z-index: 0;
+    height: 30px;
+    padding: 5px 3px 7px 9px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #ebd1ff;
+
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__sale-card {
+    z-index: 0;
+    height: 30px;
+    padding: 5px 3px 7px 9px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #ebd1ff;
+
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__color-card {
+    z-index: 0;
+    height: 30px;
+    padding: 5px 3px 7px 9px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #eaeaea;
+
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__el-card {
+    z-index: 0;
+    height: 30px;
+    padding: 5px 3px 7px 9px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff5d1;
+
+    @include mobile {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__text-card {
+    margin-right: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #666;
+  }
+
+  &__exit-btn {
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    &::before {
+      content: "";
+      z-index: 1000;
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 10px;
+      height: 1px;
+      background-color: #666;
+      transform: rotate(45deg);
+      transition-property: background-color, transform;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &::after{
+      content: "";
+      z-index: 1000;
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 10px;
+      height: 1px;
+      background-color: #666;
+      transform: rotate(-45deg);
+      transition-property: background-color, transform;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:hover:not(:focus-visible) {
+
+      &::before {
+        background-color: #a65cf0;
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after{
+        background-color: #a65cf0;
+        transition: background-color .4s ease-in-out;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      &::before {
+        background-color: #000;
+        transform: rotate(-45deg);
+        transition-property: background-color, transform;
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+      }
+
+      &::after{
+        background-color: #000;
+        transform: rotate(45deg);
+        transition-property: background-color, transform;
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+
+      &::before {
+        background-color: #7033ac;
+        transition: background-color .4s ease-in-out;
+      }
+
+      &::after{
+        background-color: #7033ac;
+        transition: background-color .4s ease-in-out;
+      }
+    }
+  }
+
+  &__card-block {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: minmax(420px, auto);
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 32px;
+    gap: 32px;
+
+    @include tablet-landscape-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-auto-rows: minmax(278px, auto);
+      gap: 16px;
+    }
+  }
+
+  &__navigation {
+    @include flex-all-center;
+    flex-direction: row;
+  }
+
+  &__navigation-btn {
+    display: flex;
+    padding: 6px 9px;
+    margin-bottom: 68px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--primary-color);
+    transition-property: border-color, background-color, color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &:not([disabled]):hover:not(:focus-visible) {
+      color: var(--light-color);
+      background-color: var(--primary-color);
+      transition-property: background-color, color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:not([disabled]):focus-visible {
+      outline: none;
+      color: var(--light-color);
+      background-color: var(--primary_light-color);
+      transition-property: background-color, color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:not([disabled]):active:not(:focus-visible) {
+      border-color: var(--primary_shade-color);
+      color: var(--light-color);
+      background-color: var(--primary_shade-color);
+      transition-property: border-color, background-color, color;
+      transition-duration: .4s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  &__navigation--active {
+    border-color: var(--primary_shade-color);
+    color: var(--light-color);
+    cursor: auto;
+    background-color: var(--primary_shade-color);
+    transition-property: border-color, background-color, color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+
+  }
+
+}
+
+.product {
+  display: none;
+}
+
+.product--active {
+  display: block;
+  opacity: 1;
+  animation: fade-in 0.6s ease-in-out;
+}
